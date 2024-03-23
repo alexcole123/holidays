@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}DreamEscapeEnjoy | Holidays{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    {% for row in holidays|batch(3) %}
+    <div class="row">
+        {% for h in row %}
+        <div class="col-md-4">
+            <div class="card" style="width: 25rem;">
+                <span onclick="changeLikeStatus(this)" class="likeBtn btn btn-outline-secondary">
+                    <i class=" i bi-heart-fill"></i> Like
+                </span>
+                <a id="noUnderLine" href="{{ url_for('holidays_view.details', id = h.id ) }}">
+                    <img src="{{ url_for('holidays_view.get_image', image_name=(h.image_name if h.image_name else '---')) }}"
+                        class="card-img-top">
+                    <span class="something">{{h.likes}}</span>
+                    <h5 class="card-title">{{ h.city }}</h5>
+                    <div class="holiday-dates bi bi-calendar-event">{{ h.start_date }} - {{ h.end_date }}</div>
+                    <div class="card-body">
+                        <p class="card-text">{{ h.description }}</p>
+                        <div class="holiday-price" href="{{ url_for('holidays_view.details', id = h.id ) }}">${{ h.price }}</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock content %}

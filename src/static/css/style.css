@@ -1,0 +1,260 @@
+/* General Styling: */
+html,
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9)), 
+        url('/static/images/Paradise.jpeg') no-repeat center center fixed; /* faded background */ 
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.navbar{
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.7)),
+        url('/static/images/Paradise.jpeg') no-repeat center center fixed; /* faded background */ 
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 3px solid;
+}
+
+/* Layout */
+.layout {
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 10% 87% 3%;
+}
+
+
+header {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+header > *, footer > * {
+    width: 100%;
+}
+
+
+main {
+    padding: 20px;
+    overflow: auto;
+}
+
+/* Form */
+.fancy-form label {
+    float: left;
+}
+
+.fancy-form {
+    width: 400px;
+    margin: auto;
+    border: 1px solid;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px;
+}
+
+.fancy-form input {
+    margin-bottom: 20px;
+}
+
+.active {
+    color: green !important;
+    font-weight: bold !important;
+    font-family: Arial !important;
+}
+
+.error {
+    background-color: red;
+    color: white;
+    font-size: large;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+}
+
+.auth {
+    border: 1px solid green;
+    border-radius: 5px;
+    margin-left: 10px;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+}
+
+#noUnderLine {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+
+
+.card{
+    margin-bottom: 15px;
+    height: auto;
+}
+  
+.card-img-top {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 200px;
+  }
+  
+.card-title {
+    text-align: left;
+    margin-top: -60px;
+    color: azure;
+}
+  
+  .holiday-dates{
+    position: relative;
+    margin-top: -5px;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: lightskyblue;
+    font-weight: bold;
+    text-align: left;
+  }
+
+
+  .card-text {
+    overflow: hidden; /* Hide overflowed text */
+    white-space: nowrap; /* Prevent line breaks in the text */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflowed text */
+    height: 3em; /* Set a fixed height for the description */
+}
+
+.card-body, .card-text{
+    position: relative;
+    margin-top: -15px;
+    background-color: rgb(243, 241, 241);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+ 
+  .holiday-price{
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid;
+    background-color: rgb(24, 99, 184);
+    color: white;
+ }
+
+ .likes {
+    color: grey;
+    background-color: rgba(240, 248, 255, 0.7); /* Adjust the alpha value (last parameter) for transparency */
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    z-index: 1; /* Ensure the button is above the image */
+    border-radius: 20px;
+}
+
+.editBtn ,.deleteBtn {
+    color: black;
+    background-color: rgba(240, 248, 255, 0.4); /* Adjust the alpha value (last parameter) for transparency */
+    position: absolute;
+    top: 5px; /* top position */
+    left: 3px; /* left position */
+    z-index: 1; /* Ensure the button is above the image */
+    border-radius: 20px;
+    padding: 5px 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.deleteBtn {
+    left: 60px; /* left position to position it next to the edit button */
+}
+
+.editBtn:hover,
+.deleteBtn:hover {
+    background-color: lightblue;
+}
+
+.likeBtn.liked {
+    background-color: rgb(255, 193, 203, 0.6); /* Change background color for liked button */
+    color: red; /* Change color for heart icon */
+}
+
+
+.likeBtn i.bi-heart-fill {
+    display: inline; /* Show filled heart icon */
+}
+
+
+
+/* Hide the default file input */
+.hidden-input {
+    display: none;
+}
+
+/* Style the file label */
+.file-label {
+    display: inline-block;
+    position: relative;
+}
+
+/* Style the image */
+.file-label img {
+    display: block;
+    width: 350px; /* Set the width and height of the image */
+    height: 180px;
+    border: 1px solid #ccc; /* Add a border to the image */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    margin-bottom: 10px;
+}
+
+/* Style the "Select Image" text */
+.file-label span {
+    position: absolute;
+    bottom: 80px; /* Adjust the position of the text */
+    width: 150px;
+    left: 100px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: rgba(41, 69, 94, 0.6);
+    color: white;
+}
+
+.header{
+    color: cornflowerblue;
+}
+
+#detailsPic{
+    width: 600px;
+    height: 300px;
+    margin-left: 100px;
+}
+
+.holiday-details-container {
+    display: flex;
+    align-items: center;
+    margin-right: 250px;
+
+}
+
+.details h5 {
+    margin-bottom: 40px; /* Add space below each detail */
+}
+
+.description-container {
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.details {
+    flex: 1; /* Allow the details to grow to fill the remaining space */
+    margin-top: 10px; /* Add some space between the details and the image */
+}

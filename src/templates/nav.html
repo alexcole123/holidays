@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="{{ url_for('home_view.home') }}">DreamEscapeEnjoy</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link {% if active == 'home' %}active{% endif %}" aria-current="page" href="{{ url_for('home_view.home') }}" {% if active=='home' %} class="active" {% endif %}>Home</a>
+                </li>
+                {% if user %}
+                    {% if user.role_id == 2 %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if active == 'user_list' %}active{% endif %}" href="{{ url_for('holidays_view.user_list') }}" {% if active=='user_list' %} class="active" {% endif %}>Holidays</a>
+                        </li>
+                    {% endif %}
+                    {% if user.role_id == 1 %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if active == 'admin_list' %}active{% endif %}" href="{{ url_for('holidays_view.admin_list') }}" {% if active=='admin_list' %} class="active" {% endif %}>Holidays</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if active == 'insert' %}active{% endif %}" href="{{ url_for('holidays_view.insert') }}" {% if active=='insert' %} class="active" {% endif %}>Add New Holiday</a>
+                        </li>
+                    {% endif %}
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link {% if active == 'about' %}active{% endif %}" href="{{ url_for('about_view.about') }}" >About</a>
+                </li>
+            </ul>
+
+            <div class="auth btn">
+                {% include "auth.html" %}
+            </div>
+
+        </div>
+    </div>
+</nav>

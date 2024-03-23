@@ -1,0 +1,32 @@
+2024-03-18 10:20:00.388308
+Encountered unknown tag 'static'.
+User ID: 24, User Email: snow12@gmail.com
+---------------------------------
+2024-03-18 10:20:24.276577
+Encountered unknown tag 'static'.
+User ID: 24, User Email: snow12@gmail.com
+---------------------------------
+2024-03-18 11:03:52.388198
+unexpected '}'
+User ID: 24, User Email: snow12@gmail.com
+---------------------------------
+2024-03-21 20:41:40.892521
+unexpected char "'" at 1526
+User ID: 22, User Email: alex@gmail.com
+---------------------------------
+2024-03-21 21:03:13.373514
+'h' is undefined
+User ID: 22, User Email: alex@gmail.com
+---------------------------------
+2024-03-21 21:14:35.305534
+'holidays' is undefined
+User ID: 22, User Email: alex@gmail.com
+---------------------------------
+2024-03-21 21:17:15.756531
+'holidays' is undefined
+User ID: 22, User Email: alex@gmail.com
+---------------------------------
+2024-03-23 13:07:08.701909
+cannot access local variable 'start_date' where it is not associated with a value
+User ID: 22, User Email: alex@gmail.com
+---------------------------------

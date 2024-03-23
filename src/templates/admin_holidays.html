@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}DreamEscapeEnjoy | Holidays{% endblock title %}
+
+{% block content %}
+<div class="container">
+    {% for row in holidays|batch(3) %}
+    <div class="row">
+        {% for h in row %}
+        <div class="col-md-4">
+            <div class="card" style="width: 25rem;">
+                <a class="editBtn likeBtn btn btn-outline-secondary" href="{{ url_for('holidays_view.edit', id = h.id) }}">Edit<i class="bi bi-pencil-square"></i></a>
+                <a class="deleteBtn likeBtn btn btn-outline-secondary" onclick="confirmDelete()" href="{{ url_for('holidays_view.delete', id = h.id) }}">Delete<i class="bi bi-trash"></i></a>
+                <a id="noUnderLine" href="{{ url_for('holidays_view.details', id=h.id) }}">
+                    <img src="{{ url_for('holidays_view.get_image', image_name=(h.image_name if h.image_name else '---')) }}" class="card-img-top">
+                    <h5 class="card-title">
+                        {{ h.city }} 
+                    </h5>
+                    <div class="holiday-dates bi bi-calendar-event">{{ h.start_date }} - {{ h.end_date }}</div>
+                    <div class="card-body">
+                        <p class="card-text">{{ h.description }}</p>
+                        <div class="holiday-price" href="{{ url_for('holidays_view.details', id=h.id) }}">${{ h.price }}</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

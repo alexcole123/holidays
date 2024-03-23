@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+
+<form method="post" class="fancy-form">
+
+    <h2 class="header">Login</h2>
+
+    <label>Email: </label>
+    <input type="email" name="email" value="{{credentials.email}}" class="form-control" required minlength="5"
+        maxlength="100">
+
+    <label>Password: </label>
+    <input type="password" name="password" value="{{credentials.password}}" class="form-control" required minlength="4"
+        maxlength="100">
+
+    <button class="btn btn-primary w-100">Login</button>
+    <br><br>
+
+    <span>don't have an account?</span>
+
+    <br>
+    <a href="{{ url_for('auth_view.register') }}">register now</a>
+
+
+
+</form>
+
+{% endblock content %}

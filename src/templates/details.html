@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}Holiday Details{% endblock title %}
+
+{% block content %}
+<div class="holiday-details-container">
+    <div>
+        <img id="detailsPic" src="{{ url_for('holidays_view.get_image', image_name = (holiday.image_name if holiday.image_name else '---') ) }}">
+    </div>
+    <div class="details">
+        <h5>City: {{ holiday.city }}🛬🛫</h5>
+        <h5>Start Date: {{ holiday.start_date }}🗓</h5>
+        <h5>End Date: {{ holiday.end_date }}🗓</h5>
+        <h5>Price: ${{ holiday.price }}</h5>
+    </div>
+</div>
+<div class="description-container">
+    <h5>Holiday Description:</h5>
+    <p>{{ holiday.description }}</p>
+</div>
+<a href="{{ url_for('holidays_view.user_list') }}">Back</a>
+{% endblock content %}

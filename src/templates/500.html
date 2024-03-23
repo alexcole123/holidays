@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}Some Error{% endblock title %}
+
+{% block content %}
+
+<h2>Some error occurred, please try again later.</h2>
+
+<img width="400" height="400" src="https://media.giphy.com/media/JsE9qckiYyVClQ5bY2/giphy.gif?cid=790b76116iin3e9cjdi43w81drmm7spogk0h98dhgdslohcj&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Animated GIF">
+<br><br>
+<a href="{{ url_for('home_view.home') }}">Home</a>
+
+{% endblock content %}

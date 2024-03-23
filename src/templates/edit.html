@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}Edit Holiday{% endblock title %}
+
+{% block content %}
+
+<form method="post" class="fancy-form" enctype="multipart/form-data">
+    <h2 class="header">Edit Vacation</h2>
+
+
+    <input type="hidden" name="id" value="{{ holiday.id }}">
+
+    <label>Country: </label>
+    <select class="form-select" name="city_id" id="city">
+        {% for city in cities %}
+            {% if city.id == holiday.city_id %}
+                <option value="{{ city.id }}" selected>{{ city.city }}</option>
+            {% else %}
+                <option value="{{ city.id }}">{{ city.city }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+    
+
+    <label>Description: </label>
+    <textarea name="description" class="form-control">{{ holiday.description }}</textarea>
+
+    <label>Price: </label>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+        </div>
+        <input type="text" name="price" class="form-control" value="{{ holiday.price }}" placeholder="$">
+    </div>
+
+    <label>Start Date: </label>
+    <input type="date" name="start_date" class="form-control" value="{{ holiday.start_date }}" required min="{{ current_date }}">
+
+    <label>End Date: </label>
+    <input type="date" name="end_date" class="form-control" value="{{ holiday.end_date }}" required min="{{ current_date }}">
+
+
+    
+    <label>Cover Image:</label>
+    <br>
+    <label for="imageInput" class="file-label">
+        <img id="previewImage" src="{{ url_for('static', filename='images/holidays/' ~ holiday.image_name) }}">
+        <span>Select Image</span>
+    </label>
+    <input type="file" name="image" accept="image/*" id="imageInput" class="hidden-input">
+
+    
+    <button class="btn btn-primary w-100">Update</button>
+    <br><br>
+    <a class="cancelButton" href="{{ url_for('holidays_view.admin_list') }}">Cancel</a>
+
+    
+</form>
+
+{% endblock content %}

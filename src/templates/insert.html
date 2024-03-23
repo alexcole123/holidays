@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}Add Holiday{% endblock title %}
+
+{% block content %}
+
+<form method="post" class="fancy-form" enctype="multipart/form-data">
+
+    <h2 class="header">Add Vacation</h2>
+
+
+    <!-- City Selector -->
+    <label>Country:</label>
+    <select class="form-select" name="city_id" id="city" required>
+        <option value="">--Select--</option>
+        {% for city in cities %}
+            <option value="{{ city.id }}" {% if request.form.city_id == city.id %}selected{% endif %}>{{ city.city }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Description: </label>
+    <textarea name="description" class="form-control" required min="10" max="1000">{{ request.form.description }}</textarea>
+
+    <label>Start Date: </label>
+    <input type="date" name="start_date" class="form-control" required min="{{ current_date }}" value="{{ request.form.start_date }}">
+
+    <label>End Date: </label>
+    <input type="date" name="end_date" class="form-control" required min="{{ current_date }}" value="{{ request.form.end_date }}">
+
+    <label>Price: </label>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+        </div>
+        <input type="text" name="price" class="form-control" required placeholder="$" value="{{ request.form.price }}">
+    </div>
+<!--     
+    <label>Cover image: </label>
+    <input type="file" name="image" accept="image/*" class="form-control" required> -->
+
+    
+    <label>Cover Image:</label>
+    <br>
+    <label for="imageInput" class="file-label">
+        <img id="previewImage" src="{{ url_for('static', filename='images/no-image.jpeg')}}" alt="Preview Image" >
+        <span>Select Image</span>
+    </label>
+    <input type="file" name="image" accept="image/*" id="imageInput" class="hidden-input">
+    
+    <button class="btn btn-primary w-100">Add</button>
+    
+</form>
+
+{% endblock content %}

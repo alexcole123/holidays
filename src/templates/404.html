@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Page Not Found
+{% endblock title %}
+
+{% block content %}
+<h3>The page you are looking for doesn't exist</h3>
+<br>
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXd3endlMWd1MWdrZmxzY2h3MHE5Nmdnb29xcTVmM3YydDB5ZzU3dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/14uQ3cOFteDaU/giphy.gif" alt="Animated GIF">
+<br><br>
+<a href="{{ url_for('home_view.home') }}">Home</a>
+
+{% endblock content %}

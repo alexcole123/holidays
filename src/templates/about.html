@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}DreamEscapeEnjoy | About{% endblock title %}
+
+{% block content %}
+<h2>Your next trip is a click away from
+<a {% if active == 'user_list' %}active{% endif %}" href="{{ url_for('holidays_view.user_list') }}" {% if active=='user_list' %} class="active" {% endif %}>you!</a>
+</h2>
+
+<img width="600px" height="500px" src="{{ url_for('static', filename='images/tropical.jpeg') }}" alt="Image Icon" width="20" height="20">
+
+<br>
+
+
+
+{% endblock content %}
